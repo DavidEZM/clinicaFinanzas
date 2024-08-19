@@ -25,9 +25,6 @@ Route::delete('profesionales/{profesional}', [ProfesionalController::class, 'des
 Route::get('tipoespecialidades', [TipoEspecialidadController::class, 'index'])->name('tipoespecialidades.index');
 Route::get('tipoespecialidades/create', [TipoEspecialidadController::class, 'create'])->name('tipoespecialidades.create');
 Route::post('tipoespecialidades', [TipoEspecialidadController::class, 'store'])->name('tipoespecialidades.store');
-Route::get('tipoespecialidades/{tipoespecialidad}', [TipoEspecialidadController::class, 'show'])->name('tipoespecialidades.show');
-Route::get('tipoespecialidades/{tipoespecialidad}/edit', [TipoEspecialidadController::class, 'edit'])->name('tipoespecialidades.edit');
-Route::put('tipoespecialidades/{tipoespecialidad}', [TipoEspecialidadController::class, 'update'])->name('tipoespecialidades.update');
 Route::delete('tipoespecialidades/{tipoespecialidad}', [TipoEspecialidadController::class, 'destroy'])->name('tipoespecialidades.destroy');
 
 //Rutas para reservas
