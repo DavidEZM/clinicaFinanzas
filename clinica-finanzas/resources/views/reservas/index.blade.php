@@ -11,9 +11,14 @@
             {{ session('success') }}
         </div>
     @endif
-    <table class="table table-striped">
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+    <table class="table table-sm">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>ID</th>
                 <th>Paciente</th>
                 <th>Rut Paciente</th>
@@ -31,12 +36,12 @@
                     <td>{{ $reserva->profesional->nombres }} {{ $reserva->profesional->apellidos }}</td>
                     <td>{{ $reserva->fecha_reserva }}</td>
                     <td>
-                        <a href="{{ route('reservas.show', $reserva->id) }}" class="btn btn-info btn-sm">Ver</a>
-                        <a href="{{ route('reservas.edit', $reserva->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{{ route('reservas.show', $reserva->id) }}" class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{ route('reservas.edit', $reserva->id) }}" class="btn btn-warning btn-sm text-white"><i class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{ route('reservas.destroy', $reserva->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>
