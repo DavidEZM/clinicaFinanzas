@@ -21,9 +21,11 @@ class PacienteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
-            'apellido' => 'required',
+            'nombres' => 'required',
+            'apellidos' => 'required',
             'email' => 'required|email|unique:pacientes,email',
+            'telefono' => 'required',
+            'rut' => 'required',
         ]);
 
         Paciente::create($request->all());
@@ -48,6 +50,8 @@ class PacienteController extends Controller
             'nombre' => 'required',
             'apellido' => 'required',
             'email' => 'required|email|unique:pacientes,email,' . $paciente->id,
+            'telefono' => 'require',
+            'rut' => 'required|rut|unique:pacientes,rut,' . $paciente->id,
         ]);
 
         $paciente->update($request->all());
