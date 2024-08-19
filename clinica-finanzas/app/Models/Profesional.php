@@ -14,7 +14,7 @@ class Profesional extends Model
     public function tipoEspecialidad()
     {
         return $this->belongsTo(TipoEspecialidad::class, 'tipoespecialidad_id');
-    }
+    }    
 
     public function reservas()
     {
