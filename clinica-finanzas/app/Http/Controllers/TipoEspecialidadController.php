@@ -30,23 +30,6 @@ class TipoEspecialidadController extends Controller
                          ->with('success', 'Tipo de Especialidad creado correctamente.');
     }
 
-    public function edit(TipoEspecialidad $tipoEspecialidad)
-    {
-        return view('tipoespecialidades.edit', compact('tipoEspecialidad'));
-    }
-
-    public function update(Request $request, TipoEspecialidad $tipoEspecialidad)
-    {
-        $request->validate([
-            'nombre_especialidad' => 'required|unique:tipoespecialidades,nombre_especialidad,' . $tipoEspecialidad->id,
-        ]);
-
-        $tipoEspecialidad->update($request->all());
-
-        return redirect()->route('tipoespecialidades.index')
-                         ->with('success', 'Tipo de Especialidad actualizado correctamente.');
-    }
-
     public function destroy(TipoEspecialidad $tipoEspecialidad)
     {
         $tipoEspecialidad->delete();
