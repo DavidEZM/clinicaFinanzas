@@ -9,6 +9,8 @@ class Atencion extends Model
 {
     use HasFactory;
 
+    protected $table = 'atenciones';
+
     protected $fillable = ['reserva_id', 'valor_atencion', 'pago_profesional', 'costo_insumos'];
 
     public function reserva()
