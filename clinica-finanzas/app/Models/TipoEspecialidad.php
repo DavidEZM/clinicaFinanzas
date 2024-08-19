@@ -15,6 +15,6 @@ class TipoEspecialidad extends Model
 
     public function profesionales()
     {
-        return $this->hasMany(Profesional::class, 'tipoespecialidad_id');
+        return $this->hasMany(Profesional::class);
     }
 }
