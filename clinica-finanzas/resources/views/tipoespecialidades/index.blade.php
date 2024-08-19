@@ -5,15 +5,21 @@
 @section('header', 'Especialidades')
 
 @section('content')
+    <h2>Listado de Especialidades</h2>
     <a href="{{ route('tipoespecialidades.create') }}" class="btn btn-primary mb-3">Crear Especialidad</a>
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <table class="table table-striped">
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+    <table class="table table-sm">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Acciones</th>
@@ -25,7 +31,6 @@
                     <td>{{ $tipoEspecialidad->id }}</td>
                     <td>{{ $tipoEspecialidad->nombre_especialidad }}</td>
                     <td>
-                        <a href="{{ route('tipoespecialidades.edit', $tipoEspecialidad->id) }}" class="btn btn-warning btn-sm text-white"><i class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{ route('tipoespecialidades.destroy', $tipoEspecialidad->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
