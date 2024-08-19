@@ -37,6 +37,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ url('/profesionales') }}">Lista</a></li>
                             <li><a class="dropdown-item" href="{{ url('/profesionales/create') }}">Agregar</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/tipoespecialidades') }}">Especialidades</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
