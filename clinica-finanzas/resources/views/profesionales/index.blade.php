@@ -32,7 +32,7 @@
                     <td>{{ $profesional->apellidos }}</td>
                     <td>{{ $profesional->rut }}</td>
                     <td>{{ $profesional->email }}</td>
-                    <td>{{ $profesional->tipoEspecialidad->nombre }}</td>
+                    <td>{{ $profesional->tipoEspecialidad->nombre_especialidad }}</td>
                     <td>{{ $profesional->telefono }}</td>
                     <td>
                         <a href="{{ route('profesionales.show', $profesional->id) }}" class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
