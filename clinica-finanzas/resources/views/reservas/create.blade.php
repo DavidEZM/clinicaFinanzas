@@ -18,7 +18,8 @@
         </div>
         <div class="mb-3">
             <label for="profesional_id" class="form-label">Profesional</label>
-            <select name="profesional_id" class="form-control">
+            <select name="profesional_id" class="form-control" required>
+                <option value="">Seleccione un profesional</option>
                 @foreach($profesionales as $profesional)
                     <option value="{{ $profesional->id }}">
                         {{ $profesional->nombres }} {{ $profesional->apellidos }} - {{ $profesional->tipoEspecialidad->nombre_especialidad }}
