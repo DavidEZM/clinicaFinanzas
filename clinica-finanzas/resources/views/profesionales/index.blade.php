@@ -5,22 +5,26 @@
 @section('header', 'Profesionales')
 
 @section('content')
+    <h2>Listado de Profesionales</h2>
     <a href="{{ route('profesionales.create') }}" class="btn btn-primary mb-3">Crear Profesional</a>
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <table class="table table-striped">
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+    <table class="table table-sm table-striped">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>ID</th>
                 <th>Nombres</th>
                 <th>Apellidos</th>
                 <th>Rut</th>
-                <th>Email</th>
                 <th>Especialidad</th>
-                <th>Telefono</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -31,11 +35,9 @@
                     <td>{{ $profesional->nombres }}</td>
                     <td>{{ $profesional->apellidos }}</td>
                     <td>{{ $profesional->rut }}</td>
-                    <td>{{ $profesional->email }}</td>
                     <td>{{ $profesional->tipoEspecialidad->nombre_especialidad }}</td>
-                    <td>{{ $profesional->telefono }}</td>
                     <td>
-                        <a href="{{ route('profesionales.show', $profesional->id) }}" class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{ route('profesionales.show', $profesional->id) }}" class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{ route('profesionales.edit', $profesional->id) }}" class="btn btn-warning btn-sm text-white"><i class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{ route('profesionales.destroy', $profesional->id) }}" method="POST" style="display:inline-block;">
                             @csrf
