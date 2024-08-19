@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes', function (Blueprint $table) {
+        Schema::create('reservas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres');
-            $table->string('apellidos');
-            $table->string('email')->unique();
-            $table->string('telefono')->nullable();
-            $table->integer('rut')->unique();
+            $table->foreignId('paciente_id')->constrained('pacientes')->onDelete('cascade');
+            $table->foreignId('profesional_id')->constrained('profesionales')->onDelete('cascade');
+            $table->dateTime('fecha_reserva');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes');
+        Schema::dropIfExists('reservas');
     }
 };

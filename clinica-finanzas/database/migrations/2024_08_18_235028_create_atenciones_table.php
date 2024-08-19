@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes', function (Blueprint $table) {
+        Schema::create('atenciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres');
-            $table->string('apellidos');
-            $table->string('email')->unique();
-            $table->string('telefono')->nullable();
-            $table->integer('rut')->unique();
+            $table->foreignId('reserva_id')->constrained('reservas')->onDelete('cascade');
+            $table->integer('valor_atencion');
+            $table->integer('pago_profesional');
+            $table->integer('costo_insumos');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes');
+        Schema::dropIfExists('atenciones');
     }
 };
