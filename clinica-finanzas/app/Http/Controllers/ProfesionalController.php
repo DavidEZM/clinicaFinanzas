@@ -48,21 +48,45 @@ class ProfesionalController extends Controller
         return view('profesionales.edit', compact('profesional', 'tipoEspecialidades'));
     }
 
-    public function update(Request $request, Profesional $profesional)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'email' => 'required|email|unique:profesionales,email,' . $profesional->id,
-            'tipoespecialidad_id' => 'required|exists:tipoespecialidades,id',
-            'telefono' => 'required',
-            'rut' => 'required|unique:profesionales,rut',
-        ]);
+        try {
+            // Validación de datos
+            $request->validate([
+                'nombres' => 'required',
+                'apellidos' => 'required',
+                'email' => 'required|email|unique:profesionales,email,' . $id,
+                'tipoespecialidad_id' => 'required|exists:tipoespecialidades,id',
+                'telefono' => 'required',
+                'rut' => 'required|numeric|digits_between:9,10|unique:profesionales,rut,' . $id,
+            ], [
+                'rut.unique' => 'El RUT ya está registrado.',
+                'email.unique' => 'El correo ya está registrado.',
+                'rut.digits_between' => 'El RUT debe tener entre 9 y 10 dígitos sin puntos ni guion.',
+                'telefono.required' => 'El teléfono es obligatorio.',
+            ]);
 
-        $profesional->update($request->all());
+            // Buscar al profesional por ID
+            $profesional = Profesional::findOrFail($id);
 
-        return redirect()->route('profesionales.index')
-                         ->with('success', 'Profesional actualizado correctamente.');
+            // Actualizar el profesional
+            $profesional->update($request->all());
+
+            // Redirigir con mensaje de éxito
+            return redirect()->route('profesionales.index')
+                             ->with('success', 'Profesional actualizado correctamente.');
+
+        } catch (ValidationException $e) {
+            // Redirigir con mensajes de error de validación
+            return redirect()->back()
+                             ->withErrors($e->validator)
+                             ->withInput()
+                             ->with('error', 'No se pudo actualizar el profesional. Por favor, corrige los errores y vuelve a intentar.');
+        } catch (\Exception $e) {
+            // Redirigir con mensaje de error genérico
+            return redirect()->route('profesionales.index')
+                             ->with('error', 'No se pudo actualizar el profesional. Inténtelo de nuevo.');
+        }
     }
 
     public function destroy(Profesional $profesional)
