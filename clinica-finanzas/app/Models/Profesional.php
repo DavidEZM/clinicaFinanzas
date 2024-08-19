@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profesional extends Model
 {
-    use HasFactory;
+    protected $table = 'profesionales';
 
     protected $fillable = ['nombres', 'apellidos', 'tipoespecialidad_id', 'email', 'telefono', 'rut'];
 
     public function tipoEspecialidad()
     {
-        return $this->belongsTo(TipoEspecialidad::class);
+        return $this->belongsTo(TipoEspecialidad::class, 'tipoespecialidad_id');
     }
 
     public function reservas()
