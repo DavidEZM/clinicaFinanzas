@@ -11,10 +11,16 @@ class Atencion extends Model
 
     protected $table = 'atenciones';
 
-    protected $fillable = ['reserva_id', 'valor_atencion', 'pago_profesional', 'costo_insumos'];
+    protected $fillable = ['reserva_id', 'valor_atencion', 'pago_profesional', 'tipoinsumo_id', 'descripcion_atencion'];
 
     public function reserva()
     {
         return $this->belongsTo(Reserva::class);
     }
+    
+    public function tipoInsumo()
+    {
+        return $this->belongsTo(TipoInsumo::class, 'tipoinsumo_id');
+    }
+    
 }
