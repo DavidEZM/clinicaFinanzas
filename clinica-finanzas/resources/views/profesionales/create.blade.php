@@ -24,6 +24,10 @@
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="number" class="form-control" id="telefono" name="telefono" required>
+        </div>
+        <div class="mb-3">
             <label for="tipoespecialidad_id" class="form-label">Especialidad</label>
             <select class="form-control" id="tipoespecialidad_id" name="tipoespecialidad_id" required>
                 <option value="">Seleccione una especialidad</option>
@@ -31,10 +35,6 @@
                     <option value="{{ $tipoEspecialidad->id }}">{{ $tipoEspecialidad->nombre_especialidad }}</option>
                 @endforeach
             </select>
-        </div>
-        <div class="mb-3">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input type="number" class="form-control" id="telefono" name="telefono" required>
         </div>
         <br>
         <button type="submit" class="btn btn-success">Guardar</button>

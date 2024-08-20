@@ -1,5 +1,3 @@
-<!-- resources/views/profesionales/show.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -28,12 +26,12 @@
                 <p>{{ $profesional->email }}</p>
             </div>
             <div class="mb-3">
-                <strong>Especialidad:</strong>
-                <p>{{ $profesional->tipoEspecialidad?->nombre_especialidad ?? 'Sin especialidad' }}</p>
-            </div>
-            <div class="mb-3">
                 <strong>Teléfono:</strong>
                 <p>{{ $profesional->telefono }}</p>
+            </div>
+            <div class="mb-3">
+                <strong>Especialidad:</strong>
+                <p>{{ $profesional->tipoEspecialidad?->nombre_especialidad ?? 'Sin especialidad' }}</p>
             </div>
         </div>
     </div>

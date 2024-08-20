@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3">
             <label for="rut" class="form-label">RUT</label>
-            <input type="text" class="form-control" id="rut" name="rut" value="{{ $profesional->rut }}" required placeholder="Ingrese el RUT del profesional">
+            <input type="number" class="form-control" id="rut" name="rut" value="{{ $profesional->rut }}" required placeholder="Ingrese el RUT del profesional">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Correo Electrónico</label>
@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $profesional->telefono }}" required placeholder="Ingrese el teléfono del profesional">
+            <input type="number" class="form-control" id="telefono" name="telefono" value="{{ $profesional->telefono }}" required placeholder="Ingrese el teléfono del profesional">
         </div>
         <div class="mb-3">
             <label for="tipoespecialidad_id" class="form-label">Tipo de Especialidad</label>
