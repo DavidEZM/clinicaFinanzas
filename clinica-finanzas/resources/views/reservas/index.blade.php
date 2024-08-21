@@ -24,6 +24,7 @@
                 <th>Rut Paciente</th>
                 <th>Profesional</th>
                 <th>Fecha Reserva</th>
+                <th>Hora Reserva</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -34,7 +35,8 @@
                     <td>{{ $reserva->paciente->nombres }} {{ $reserva->paciente->apellidos }}</td>
                     <td>{{ $reserva->paciente->rut }}</td>
                     <td>{{ $reserva->profesional->nombres }} {{ $reserva->profesional->apellidos }}</td>
-                    <td>{{ $reserva->fecha_reserva }}</td>
+                    <td>{{ \Carbon\Carbon::parse($reserva->fecha_reserva)->format('d-m-Y') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($reserva->hora_reserva)->format('H:i') }}</td>
                     <td>
                         <a href="{{ route('reservas.show', $reserva->id) }}" class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{ route('reservas.edit', $reserva->id) }}" class="btn btn-warning btn-sm text-white"><i class="fa-solid fa-pen-to-square"></i></a>

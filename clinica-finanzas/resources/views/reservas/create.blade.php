@@ -31,6 +31,10 @@
             <label for="fecha_reserva" class="form-label">Fecha</label>
             <input type="date" class="form-control" id="fecha_reserva" name="fecha_reserva" required>
         </div>
+        <div class="mb-3">
+            <label for="hora_reserva">Hora de Reserva</label>
+            <input type="time" class="form-control" id="hora_reserva" name="hora_reserva" required>
+        </div>
         <button type="submit" class="btn btn-success">Guardar</button>
         <a href="{{ route('reservas.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>

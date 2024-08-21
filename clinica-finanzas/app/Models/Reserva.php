@@ -9,7 +9,7 @@ class Reserva extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['paciente_id', 'profesional_id', 'fecha_reserva'];
+    protected $fillable = ['paciente_id', 'profesional_id', 'fecha_reserva', 'hora_reserva'];
 
     public function paciente()
     {

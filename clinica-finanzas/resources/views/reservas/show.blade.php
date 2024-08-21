@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Detalle Reserva')
+
 @section('content')
     <div class="container">
         <h1>Detalles de la Reserva</h1>
@@ -7,7 +9,10 @@
         <div class="card">
             <div class="card-header bg-dark text-white d-flex justify-content-between">
                 <span>Reserva #{{ $reserva->id }}</span>
-                <span>Fecha Reserva: {{ $reserva->fecha_reserva }}</span>
+                <span> 
+                    Fecha Reserva: {{ \Carbon\Carbon::parse($reserva->fecha_reserva)->format('d-m-Y') }}    
+                    Hora: {{ \Carbon\Carbon::parse($reserva->hora_reserva)->format('H:i') }} hrs
+                </span>
             </div>
             <div class="card-body">
                 <table class="table table-sm table-borderless">
