@@ -13,4 +13,4 @@ Route::apiResource('pacientes', PacienteController::class);
 Route::apiResource('atenciones', AtencionController::class);
 
 // Rutas de API para Reserva
-Route::apiResource('reserva', ReservaController::class);
+Route::apiResource('reservas', ReservaController::class);
