@@ -1,66 +1,45 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Proyecto Code Changelle Clinica Finanzas
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto está desarrollado con Laravel 11, PHP 8.3 y utiliza SQLite como base de datos.
+A continuación, se presentan las instrucciones detalladas para instalar y servir la aplicación en tu máquina local.
 
-## About Laravel
+## Instrucciones para Servir la Aplicación
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Prerrequisitos: Antes de comenzar, asegúrate de tener los siguientes requisitos instalados en tu máquina:
+   - PHP 8.3 o superior.
+   - Composer: Herramienta para gestionar las dependencias de PHP.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+2. Clonar el Repositorio: 
+   - Clona el repositorio en tu máquina local utilizando el siguiente comando en tu terminal o línea de comandos:
+     ***bash***
+     git clone https://github.com/DavidEZM/clinicaFinanzas.git
+     ***
+	   
+   - Si tienes Github Desktop puedes clonarlo desde la opcion Clone Repository y insertar la URL proporsionada mas arriba, luego presionar en Clone y Listo.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+3. Abrir la Shell:
+   - Navega a la carpeta del repositorio clonado con el siguiente comando:
+     ***bash***
+     cd nombreCarpeta/
+     ***
+   - el nombre de la carpeta debe ser el nombre de la carpeta en donde se clono el repositorio, reemplazar por el nombre de la carpeta correspondiente.
+   - Asegúrate de estar en la carpeta raíz del proyecto para los siguientes pasos.
 
-## Learning Laravel
+4. Instalar Dependencias:
+   - Ejecuta el siguiente comando para instalar todas las dependencias necesarias del proyecto usando Composer:
+     **bash**
+     	composer install
+     ***
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+5. Servir la Aplicación:
+   - Una vez que las dependencias se hayan instalado, puedes iniciar el servidor de desarrollo de Laravel con el siguiente comando:
+     ***bash***
+     php artisan serve
+     ***
+   - Esto iniciará el servidor y la aplicación estará disponible en la URL y puerto por defecto, que generalmente es `http://localhost:8000`.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Notas Adicionales:
+- El proyecto utiliza SQLite como base de datos. Por lo tanto, no es necesario instalar ni configurar una base de datos adicional. Esto simplifica la configuración y el uso de la aplicación.
+Con estos pasos, deberías poder instalar y ejecutar la aplicación Laravel 11 en tu máquina local sin problemas.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
